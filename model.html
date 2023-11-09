@@ -110,7 +110,8 @@ DB_PASSWORD=</code></pre>
                 <p>Jika perintah diatas berhasil dijalankan, maka kita akan mendapatkan 2 <em>file</em> baru, yang berada di dalam folder : </p>
                 <ul>
                     <li class="text-red-500">app/Models/Post.php</li>
-                    <li class="text-red-500">database/migrations/2023_11_09_160153_create_posts_table.php</li>
+                    <li class="text-red-500">database/migrations/2023_11_09_160153_create_
+                        posts_table.php</li>
                 </ul>
                 <div class="p-1 border-l-8 border-orange-500 bg-orange-100">
                     <p class="text-xl pl-4 font-medium leading-relaxed text-gray-900 dark:text-white"><span class="font-bold">INFORMASI</span> : nama file Migration akan random sesuai dengan tanggal dibuat-nya</p>
@@ -119,17 +120,18 @@ DB_PASSWORD=</code></pre>
                 <!-- Field -->
                 <h1 class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 4 - Menambahkan Field di dalam Migration</h1>
                 <p>Hal apa yang perlu kita lakukan setelah membuat <em>Model dan Migration</em> di <b>Laravel</b>? jawaban-nya adalah menambahkan field atau kolom yang nanti ada di dalam file <em>Migration.</em></p>
-                <p>Silahkan buka file <em>migration</em>-nya yang berada di dalam folder <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">database/migrations/2023_11_09_160153_create_posts_table.php</span>, kemudian pada <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">function up</span>, ubah kode-nya menjadi seperti berikut ini</p>
+                <p>Silahkan buka file <em>migration</em>-nya yang berada di dalam folder <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">database/migrations/2023_11_09
+                    _160153_create_posts_table.php</span>, kemudian pada <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">function up</span>, ubah kode-nya menjadi seperti berikut ini</p>
                 <pre class="bg-black"><code class="language-html text-white">public function up(): void
 {
     Schema::create('posts', function (Blueprint $table) {
-                        $table->id();
-                        $table->string('image');
-                        $table->string('title');
-                        $table->text('content');
-                        $table->timestamps();
-                    });
-                }</code></pre>
+        $table->id();
+        $table->string('image');
+        $table->string('title');
+        $table->text('content');
+        $table->timestamps();
+    });
+}</code></pre>
                                 <p>Dari perubahan kode di atas, kita menambahkan 3 field baru, yaitu :</p>
                 <div class="relative overflow-x-auto">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
