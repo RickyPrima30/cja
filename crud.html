@@ -1132,7 +1132,7 @@ $post->update([
             <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">Data Berhasil Diubah!</span>.</p>
             <pre class="bg-black"><code class="language-html text-white">//redirect to index
 return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diubah!']);</code></pre>
-            <h1 id="la-11" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 11 - Membuat View From Edit</h1>
+            <h1 id="la-12" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 12 - Membuat View From Edit</h1>
             <p>Setelah berhasil menambahkan 2 method di dalam controller, maka sekarang kita akan lanjutkan membuat view yang digunakan untuk menampilkan halaman form edit</p>
             <p>Silahkan buat file baru dengan nama <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">edit.blade.php</span> di dalam folder <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">resources/views/posts</span>,
             kemudian masukan kode berikut ini di dalamnya.</p>
@@ -1216,13 +1216,13 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diuba
 &lt;/form&gt;</pre>
             <p>Route <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">posts.update</span> akan otomatis mengarah ke dalam method <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">update</span> yang ada di dalam controller.</p>
             <p>Dan jangan lupa, untuk form edit kita wajib menambahkan <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">@method('PUT')</span>. Itu bertujuan untuk memberitahu bahwa method yang akan digunakan adalah <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">PUT</span>.</p>
-            <h1 id="la-12" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 12 - Uji Coba Edit dan Update Data</h1>
+            <h1 id="la-13" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 13 - Uji Coba Edit dan Update Data</h1>
             <p>Silahkan klik button <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">EDIT</span> yang ada pada halaman <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">posts.index</span>, jika berhasil maka akan menampilkan halaman form edit yang kurang lebih seperti berikut ini.</p>
             <img src="img/kuisaosoaks.png">
             <p>Silahkan coba update isi di dalamnya sesuai dengan keinginan dan klik button <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">Update</span>, jika berhasil maka kurang lebih seperti berikut ini.</p>
             <img src="img/vewausduaw.png">
             <!-- DELETE DATA -->
-            <h1 id="la-13" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 13 - Menambahkan Method Destroy</h1>
+            <h1 id="la-14" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 14 - Menambahkan Method Destroy</h1>
             <p>Disini kita akan menambahkan method baru di dalam controller post, method ini nanti kita gunakan untuk menghapus data dari database melalui model dan juga menghapus gambar dari folder storage <b>Laravel</b>.</p>
             <p>Silahkan buka file <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">app/Http/Controllers/PostController.php</span>, kemudian ubah semua kode-nya menjadi seperti berikut ini.</p>
             <pre class="bg-black"><code class="language-html text-white">&lt;?php
@@ -1420,7 +1420,7 @@ $post->delete();</code></pre>
             dan berisi value <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">Data Berhasil Dihapus!</span>.</p>
             <pre class="bg-black"><code class="language-html text-white">//redirect to index
 return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Dihapus!']);</code></pre>
-            <h1 id="la-14" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 14 - Uji Coba Delete Data</h1>
+            <h1 id="la-15" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 15 - Uji Coba Delete Data</h1>
             <p>Silahkan klik button <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">DELETE</span> disalah satu data, jika berhasil maka akan menampilkan sebuah alert konfirmasi.</p>
             <img src="img/hsuahusjaw.png">
             <p>Silahkan klik <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">OK</span>, maka data akan berhasil dihapus data database.</p>
