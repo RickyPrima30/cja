@@ -58,7 +58,7 @@
         <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
             <article
                 class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                <header class="mb-4 lg:mb-6 not-format">
+                <!-- <header class="mb-4 lg:mb-6 not-format">
                     <div class="flex items-center mt-8 not-italic">
                         <img class="mr-4 w-16 rounded-full" src="img/mes87876261.png" alt="Ricky Primayuda Putra">
                         <div>
@@ -98,7 +98,6 @@
                 <p>Selanjutnya kita akan belajar bagaimana cara membuar Model dan Migration di dalam <b>Laravel</b></p>
                 <p>Model merupakan salah satu arsitektur / pola yang digunakan untuk membangun sebuah aplikasi, yaitu <b>MVC</b> atau Model, View, Controller. Model biasanya berisi kode-kode yang berhubungan dengan database. (cmiiw)</p>
                 <p>Sedangkan Migration merupakan version control dari database, dengan Migration kita bisa membuat schema table dan field dengan lebih mudah dibandingkan harus membuatnya manual di database.</p>
-                <!-- Konfigurasi -->
                 <h1 id="la-1" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 1 - Konfigurasi Koneksi Database</h1>
                 <p>Hal pertama yang akan kita lakukan adalah mengatur koneksi dari aplikasi (<b>Laravel</b>) ke dalam database, di <b>Laravel</b> kita sudah di sediakan sebuah file konfigurasi untuk memudahkan developer atau pengembang,
                 nama file tersebut <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">.env</span>.</p>
@@ -113,16 +112,12 @@ DB_USERNAME=root
 DB_PASSWORD=</code></pre>
                 <p>Pada perubahan kode di atas, kita mengubah <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">DB_DATABASE</span> menggunakan <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">cja_laravel_10</span> dan untuk <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">DB_PASSWORD</span> silahkan disesuaikan dengan konfigurasi dari <b>MySQL</b>-nya
                 masing masing, dikarenakan kita menggunakan <b>XAMPP</b>, maka dikosongkan saja (default)</p>
-                <!-- END Konfigurasi -->
-                <!-- DATABASE -->
                 <h1 id="la-2" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 2 - Membuat Database di MySQL</h1>
                 <p>Karena sudah berhasil melakukan konfigurasi di dalam <b>Laravel</b>, berarti kita lanjutkan membuat database-nya di dalam <b>MySQL</b></p>
                 <p>Karena kita menggunakan <b>XAMPP</b>, maka kita menggunakan <b>DBMS</b> (Database Management System) seeprerti <b>PhpMyAdmin</b> untuk mempermudah kita dalam pembuatan database.</p>
                 <p>Silahkan buka <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a>, kemudian silahkan buat database baru  dengan nama <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">cja_laravel_10</span>, kurang lebih seperti berikut ini.</p>
                 <img src="img/ahsgdhabsdhwa.jpeg">
                 <img src="img/ajsdjajdnw.jpeg">
-                <!-- END DATABASE -->
-                <!-- Create Model & Migration -->
                 <h1 id="la-3" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 3 - Membuat Model dan Migration</h1>
                 <p>Setelah <b>Laravel</b> dan database <b>MySQL</b> terhubung, maka bisa kita lanjutkan membuat <em>Model dan Migration</em> di dalam <b>Laravel</b>.</p>
                 <p>Silahkan jalankan perintah berikut ini di dalam terminak/CMD dan pastikan sudah berada di dalam project <b>Laravel</b>-nya.</p>
@@ -137,8 +132,6 @@ DB_PASSWORD=</code></pre>
                 <div class="p-1 border-l-8 border-orange-500 bg-orange-100">
                     <p class="text-xl pl-4 font-medium leading-relaxed text-gray-900 dark:text-black"><span class="font-bold">INFORMASI</span> : nama file Migration akan random sesuai dengan tanggal dibuat-nya</p>
                 </div>
-                <!-- End Create Model & Migration -->
-                <!-- Field -->
                 <h1 id="la-4" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 4 - Menambahkan Field di dalam Migration</h1>
                 <p>Hal apa yang perlu kita lakukan setelah membuat <em>Model dan Migration</em> di <b>Laravel</b>? jawaban-nya adalah menambahkan field atau kolom yang nanti ada di dalam file <em>Migration.</em></p>
                 <p>Silahkan buka file <em>migration</em>-nya yang berada di dalam folder <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">database/migrations/2023_11_09
@@ -194,8 +187,6 @@ DB_PASSWORD=</code></pre>
                         </tbody>
                     </table>
                 </div>
-                <!-- END Field -->
-                <!-- MASS ASSIGNMENT -->
                 <h1 id="la-5" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 5 - Konfigurasi Mass Assignment</h1>
                 <p><em>Field</em> atau <em>column</em> yang sudah kita tambahkan di dalam migration tidak akan pernah bisa menyimpan data ke database sebelum kita melakukan
                  konfigurasi <em>Mass Assignment</em> di dalam <em>Model.</em></p>
@@ -230,8 +221,6 @@ class Post extends Model
                 <p>Dari perubahan di atas, kita menambahkan properti baru dengan nama <span class="text-yellow-400
                 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">$fillable</span> dan di dalamnya kita berikan <em>value</em> dari field-field
                 yang kita buat sebelumnya di dalam <em>Migration</em>.</p>
-                <!-- END MASS ASSIGNMENT -->
-                <!-- Run Migration -->
                 <h1 id="la-6" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 6 - Menjalankan Migration</h1>
                 <p>Agar field-field yang ada di dalam <em>Migration</em> digenerate ke dalam database, maka kita perlu menjalankan perintah
                     <span class="text-yellow-400
@@ -241,8 +230,17 @@ class Post extends Model
                 <p>Jika perintah di atas berhasil dijalankan, maka kurang lebih hasilnya akan seperti berikut ini.</p>
                 <img src="img/mkasmkdjakwn.png">
                 <p>Dan jika di cek pada <b>PhpMyAdmin</b>, maka table-table akan berhasil digenerate beserta field-field di dalamnya.</p>
-                <img src="img/jsahdhwdusd.png">
-                <!-- End Run Migration -->
+                <img src="img/jsahdhwdusd.png"> -->
+                <section class="bg-white dark:bg-gray-900">
+                    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                        <div class="mx-auto max-w-screen-sm text-center">
+                            <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">404</h1>
+                            <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">Something's missing.</p>
+                            <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">Kalian harus menunggu hari H dulu untuk mengakses materi lainnya</p>
+                            <a href="index.html" class="inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4">Kembali ke Installasi</a>
+                        </div>   
+                    </div>
+                </section>
             </article>
         </div>
     </main>

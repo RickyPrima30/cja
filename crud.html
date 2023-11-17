@@ -58,7 +58,7 @@
         <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
             <article
                 class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                <header class="mb-4 lg:mb-6 not-format">
+                <!-- <header class="mb-4 lg:mb-6 not-format">
                     <div class="flex items-center mt-8 not-italic">
                         <img class="mr-4 w-16 rounded-full" src="img/mes87876261.png" alt="Ricky Primayuda Putra">
                         <div>
@@ -105,7 +105,6 @@
                 </header>
                 <p>Selanjutnya kita akan belajar bagaimana cara Menambahkan data, Menampilkan data, Meng-update data, Menghapus data dari database di dalam <b>Laravel</b>. Dan untuk UI atau User Interface
                 yang akan kita gunakan adalah <b>Bootstrap</b>, sehingga tampilan nya bisa lebih bagus dan cepat dibandingkan kita harus membuat nya secara manual.</p>
-                <!-- Controller -->
                 <h1 id="la-1" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 1 - Membuat Controller Post</h1>
                 <p>Hal pertama yang harus kita lakukan adalah membuat <em>Controller-nya</em> terlebih dahulu. <em>Controller</em> digunakan untuk menghubungkan antara <em>Model</em> dengan <em>View</em> dan biasanya <em>Controller</em>
                 akan berisi logika-logika dari aplikasi yang dibangun.</p>
@@ -170,8 +169,6 @@ return view('posts.index', compact('posts'));</code></pre>
                 <p>Di atas kita melakukan render ke dalam view <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">resources/posts/index.blade.php</span>
                 dengan mengirimkan <em>variable</em> <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">$posts</span>. Jika teman-teman cek sekarang, file view
                 tersebut masih belum ada, karena kita akan membuatnya setelah ini.</p>
-                <!-- End Controller -->
-                <!-- Route -->
                 <h1 id="la-2" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 2 - Membuat Route Post</h1>
                 <p>Agar bisa mengakses <em>controller</em> melalui URL <em>browser</em>, maka kita perlu membuatkan route-nya terlebih dahulu. Jadi konsepnya kita akan memanggil
                 route, kemudian route memanggil <em>controller</em> dan <em>controller</em> memanggil view.</p>
@@ -193,8 +190,6 @@ Route::resource('/posts', \App\Http\Controllers\PostController::class);</code></
                 <p>Untuk memastikan apakah penambahan route kita berhasil, kita bisa menjalankan perintah berikut ini dalam terminal/CMD dan pastikan sudah berada di dalam project <b>Laravel</b>-nya.</p>
                 <pre class="bg-black"><code class="language-html text-white">php artisan route:list</code></pre>
                 <img src="img/nhhsasyadgygwds.jpeg">
-                <!-- End Route -->
-                <!-- SHOW DATA -->
                 <h1 id="la-3" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 3 - Membuat View dan Menampilkan Data</h1>
                 <p>Setelah <em>controller</em> dan route berhasil dibuat, maka sekarang kita akan lanjutkan belajar membuat <em>view</em> yang digunakan untuk menampilkan data.</p>
                 <p>Silahkan buat folder baru dengan nama <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">posts</span> di dalam <em>folder</em> <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">resources/views</span>
@@ -307,16 +302,13 @@ Route::resource('/posts', \App\Http\Controllers\PostController::class);</code></
 
     @endif
 &lt;script&gt;</code></pre>
-                <!-- End SHOW DATA -->
-                <!-- TRY -->
                 <h1 id="la-4" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 4 - Uji Coba Menampilkan Data</h1>
                 <p>Sekarang silahkan jalankan projectnya dengan mengakses <a href="http://localhost:8080/posts">http://localhost:8080/posts</a>
                 di dalam <em>browser</em>, jika berhasil maka hasilnya kurang lebih akan seperti ini</p>
                 <img src="img/najnwjdsmaw.png">
                 <p>Di atas masih menampilkan pesan <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">Data Posts belum Tersedia</span>
                 , itu karena memang kita masih belum memiliki data apapun di <em>table</em><span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">posts</span>.</p>
-                <!-- ENDTRY -->
-                <!-- Create Method -->
+
                 <h1 id="la-5" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 5 - Membuat Method Create dan Store</h1>
                 <p>Selanjutnya kita akan membuat 2 method di dalam controller, apa saja <em>method</em> tersebut? yaitu :</p>
                 <ul>
@@ -539,8 +531,6 @@ Post::create([
                 dengan memberikan session flash yang memiliki key <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">success</span> dan isinya adalah <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">Data Berhasil Disimpan!</span></p>
                 <pre class="bg-black"><code class="language-html text-white">//redirect to index
 return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disimpan!']);</code></pre>
-                <!-- End Create Method -->
-                <!-- VIEW FORM CREATE -->
                 <h1 id="la-6" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 6 - Membuat View Form Create</h1>
                 <p>Setelah berhasil membuat 2 <em>method</em>, di dalam controller, maka kita bisa lanjutkan membuat view untuk menampilkan halaman tambah data post.</p>
                 <p>Silahkan buat file baru dengan nama <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">create.blade.php</span>
@@ -569,7 +559,6 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disim
                                 &lt;label class="font-weight-bold"&gt;GAMBAR&lt;/label&gt;
                                 &lt;input type="file" class="form-control @error('image') is-invalid @enderror" name="image"&gt;
 
-                                <!-- error message untuk title -->
                                 @error('image')
                                     &lt;div class="alert alert-danger mt-2"&gt;
                                         {{ $message }}
@@ -581,7 +570,6 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disim
                                 &lt;label class="font-weight-bold"&gt;JUDUL&lt;/label&gt;
                                 &lt;input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Masukkan Judul Post"&gt;
                             
-                                <!-- error message untuk title -->
                                 @error('title')
                                     &lt;div class="alert alert-danger mt-2"&gt;
                                         {{ $message }}
@@ -593,7 +581,6 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disim
                                 &lt;label class="font-weight-bold"&gt;KONTEN&lt;/label&gt;
                                 &lt;textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="5" placeholder="Masukkan Konten Post"&gt;{{ old('content') }}&lt;/textarea&gt;
                             
-                                <!-- error message untuk content -->
                                 @error('content')
                                     &lt;div class="alert alert-danger mt-2"&gt;
                                         {{ $message }}
@@ -632,16 +619,12 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disim
                 <pre class="bg-black"><code class="language-html text-white">&lt;script&gt;
     CKEDITOR.replace( 'content' );
 &lt;script&gt;</code></pre>
-                <!-- END VIEW FORM CREATE -->
-                <!-- Insert Data -->
                 <h1 id="la-7" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 7 - Uji Coba Insert Data Post</h1>
                 <p>Silahkan klik button <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">TAMBAH POST</span> pada halaman posts index atau bisa juga ke URL berikut ini <a href="http://localhost:8080/posts/create">http://localhost:8080/posts/create</a>
                 , jika berhasil maka akan menampilkan hasil berikut ini</p>
                 <img src="img/asjndjawnjdnxa.png">
                 <p>Silahkan masukan data-data yang diinginkan, kemudian klik button <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">SIMPAN</span>. Jika berhasil maka kita akan diarahkan ke halaman posts index dengan menampilkan alert/notifikasi sukses tambah data.</p>
                 <img src="img/aksmdkamskdnwaknd.png">
-                <!-- End Insert Data -->
-                <!-- Method Show -->
                 <h1 id="la-8" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 8 - Menambahkan Method Show</h1>
                 <p>Jadi kita akan membuat <em>method</em> baru di dalam controller, method ini kita gunakan untuk mencari data berdasarkan <b>ID</b></p>
                 <p>Silahkan buka file <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">app/Http/Controllers/PostController.php</span>,
@@ -790,7 +773,6 @@ return view('posts.show', compact('post'));</code></pre>
                 <pre class="bg-black"><code class="language-html text-white">&lt;h4&gt;{{ $post->title }}&lt;/h4&gt;</code></pre>
                 <p>Dan terakhir, untuk <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">content</span> karena isinya mengandung sintaks <b>HTML</b>, maka kita perlu menampilkannya dengan sintaks khusus, yaitu seperti ini</p>
                 <pre class="bg-black"><code class="language-html text-white">{!! $post->content !!}</code></pre>
-                <!-- End Method Show -->
                 <h1 id="la-10" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 10 - Uji Coba Menampilkan Detail Data Post</h1>
                 <p>Silahkan klik button <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">SHOW</span> di salah satu data yang ada pada halaman <em>posts index</em>, jika berhasil maka akan menampilkan hasil seperti berikut ini.</p>
                 <img src="img/jjuwhjnsnwkn.png">
@@ -1166,7 +1148,6 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diuba
                                 &lt;label class="font-weight-bold"&gt;JUDUL&lt;/label&gt;
                                 &lt;input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $post->title) }}" placeholder="Masukkan Judul Post"&gt;
                             
-                                <!-- error message untuk title -->
                                 @error('title')
                                     &lt;div class="alert alert-danger mt-2"&gt;
                                         {{ $message }}
@@ -1178,7 +1159,6 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diuba
                                &lt;label class="font-weight-bold"&gt;KONTEN&lt;/label&gt;
                                &lt;textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="5" placeholder="Masukkan Konten Post"&gt;{{ old('content', $post->content) }}&lt;/textarea&gt;
                            
-                               <!-- error message untuk content -->
                                @error('content')
                                    &lt;div class="alert alert-danger mt-2"&gt;
                                        {{ $message }}
@@ -1222,7 +1202,6 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diuba
             <img src="img/kuisaosoaks.png">
             <p>Silahkan coba update isi di dalamnya sesuai dengan keinginan dan klik button <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">Update</span>, jika berhasil maka kurang lebih seperti berikut ini.</p>
             <img src="img/vewausduaw.png">
-            <!-- DELETE DATA -->
             <h1 id="la-14" class="text-3xl leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Langkah 14 - Menambahkan Method Destroy</h1>
             <p>Disini kita akan menambahkan method baru di dalam controller post, method ini nanti kita gunakan untuk menghapus data dari database melalui model dan juga menghapus gambar dari folder storage <b>Laravel</b>.</p>
             <p>Silahkan buka file <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">app/Http/Controllers/PostController.php</span>, kemudian ubah semua kode-nya menjadi seperti berikut ini.</p>
@@ -1426,13 +1405,20 @@ return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Dihap
             <img src="img/hsuahusjaw.png">
             <p>Silahkan klik <span class="text-yellow-400 dark:text-red-600 bg-gray-600 dark:bg-black rounded-md px-2">OK</span>, maka data akan berhasil dihapus data database.</p>
             <img src="img/powpoadspdawd.png">
-            <!-- END DELETE DATA -->
-            <!-- CLOSSING -->
             <p>Sampai disini untuk materi <b>Code Jam Academy Sesi 1</b> jika ada yang kurang paham/masih bingung bisa chat <a href="https://wa.me/+62895363185264">whatsapp</a></p>
             <div class="p-1 border-l-8 border-orange-500 bg-orange-100">
                 <p class="text-xl pl-4 font-medium leading-relaxed text-gray-900 dark:text-black"><span class="font-bold">Source Code</span> : <a href="https://github.com/RickyPrima30/cja-lar10-crud">github.com/RickyPrima30/cja-lar10-crud</a></p>
-            </div>
-            <!-- End CLOSSING -->
+            </div> -->
+            <section class="bg-white dark:bg-gray-900">
+                <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                    <div class="mx-auto max-w-screen-sm text-center">
+                        <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">404</h1>
+                        <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">Something's missing.</p>
+                        <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">Kalian harus menunggu hari H dulu untuk mengakses materi lainnya</p>
+                        <a href="index.html" class="inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4">Kembali ke Installasi</a>
+                    </div>   
+                </div>
+            </section>
             </article>
         </div>
     </main>
